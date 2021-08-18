@@ -42,6 +42,9 @@ phases:
         analysisTolerance: LOW
         comparisonStrategy: COMPARE_WITH_CURRENT
         customThresholdRefId: 69b88e84a85b41d8ab968944ff5bab6e
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeDuration: 5
         timeSeriesToAnalyze:
         - metricName: normal_call
