@@ -50,7 +50,7 @@ phases:
         - metricName: normal_call
           metricType: THROUGHPUT
           txnName: custom
-          url: io_harness_custom_metric_normal_call{kubernetes_pod_name="$hostName"}
+          url: io_harness_custom_metric_normal_call{kubernetes_pod_name!="$hostName"}
         - metricName: error_call
           metricType: ERROR
           txnName: custom
