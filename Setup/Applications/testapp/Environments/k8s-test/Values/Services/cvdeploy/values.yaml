@@ -1,3 +1,4 @@
+name: cv-demo1
 env:
   config:
     ALLOWED_ORIGINS: http://192.168.49.2:30531/
