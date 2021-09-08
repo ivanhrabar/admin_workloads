@@ -44,6 +44,19 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
+    - type: APPROVAL
+      name: Approval timeout
+      properties:
+        approvalStateType: USER_GROUP
+        publishAsVar: true
+        sweepingOutputName: HARNESS_APPROVAL_STATUS
+        sweepingOutputScope: WORKFLOW
+        timeoutMillis: 600000
+        userGroupNames:
+        - Account Administrator
+        variables:
+        - name: HARNESS_APPROVAL_STATUS
+          value: APPROVED
     stepsInParallel: false
   provisionNodes: false
   serviceName: nginx
