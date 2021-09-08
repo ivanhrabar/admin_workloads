@@ -55,6 +55,9 @@ phases:
         stateTimeoutInMinutes: 10
     stepsInParallel: false
     waitInterval: 120
+  - type: K8S_PHASE_STEP
+    name: Clenup
+    stepsInParallel: false
   provisionNodes: false
   serviceName: nginx
   statefulSet: false
