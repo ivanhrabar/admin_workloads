@@ -34,6 +34,13 @@ phases:
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
+    steps:
+    - type: K8S_DELETE
+      name: Delete
+      properties:
+        deleteNamespacesForRelease: false
+        resources: deployment/${service.name}-deployment, service/${service.name}-svc, configmap/${service.name}-${workflow.releaseNo}, secrets/${service.name}-${artifact.metadata.tag.split('-')[1]}
+        stateTimeoutInMinutes: 10
     stepsInParallel: false
     waitInterval: 120
   provisionNodes: false
