@@ -45,6 +45,7 @@ phases:
         templateVariables: null
         templateVersion: null
     stepsInParallel: false
+    waitInterval: 120
   provisionNodes: false
   serviceName: nginx
   statefulSet: false
