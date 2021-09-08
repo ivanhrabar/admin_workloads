@@ -35,22 +35,6 @@ phases:
   - type: K8S_PHASE_STEP
     name: Wrap Up
     steps:
-    - type: APPROVAL
-      name: Approval timeout
-      properties:
-        approvalStateType: USER_GROUP
-        publishAsVar: true
-        sweepingOutputName: HARNESS_APPROVAL_STATUS
-        sweepingOutputScope: WORKFLOW
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 180000
-        userGroupNames:
-        - Account Administrator
-        variables:
-        - name: HARNESS_APPROVAL_STATUS
-          value: APPROVED
     - type: SHELL_SCRIPT
       name: Shell Script
       properties:
