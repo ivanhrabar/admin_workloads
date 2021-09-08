@@ -35,16 +35,6 @@ phases:
   - type: K8S_PHASE_STEP
     name: Wrap Up
     steps:
-    - type: APPROVAL
-      name: Approval
-      properties:
-        approvalStateType: USER_GROUP
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 300000
-        userGroupNames:
-        - Account Administrator
     - type: K8S_DELETE
       name: Delete
       properties:
