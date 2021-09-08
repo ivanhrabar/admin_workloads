@@ -39,7 +39,7 @@ phases:
       name: Delete
       properties:
         deleteNamespacesForRelease: false
-        resources: deployment/${service.name}-deployment, service/${service.name}-svc, configmap/${service.name}-${workflow.releaseNo}, secrets/${service.name}-*
+        resources: deployment/${service.name}-deployment, service/${service.name}-svc, configmap/${service.name}-${workflow.releaseNo}, secrets/${service.name}-${artifact.metadata.tag}
         stateTimeoutInMinutes: 10
         templateUuid: null
         templateVariables: null
