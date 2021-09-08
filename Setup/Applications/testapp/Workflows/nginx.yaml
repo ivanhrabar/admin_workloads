@@ -37,6 +37,9 @@ phases:
       properties:
         approvalStateType: USER_GROUP
         templateExpressions: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 86400000
         userGroupNames:
         - Account Administrator
