@@ -51,15 +51,6 @@ phases:
         variables:
         - name: HARNESS_APPROVAL_STATUS
           value: APPROVED
-    - type: K8S_DELETE
-      name: Delete
-      properties:
-        deleteNamespacesForRelease: false
-        resources: deployment/${service.name}-deployment, service/${service.name}-svc, configmap/${service.name}-${workflow.releaseNo}, secrets/${service.name}-${workflow.releaseNo}
-        stateTimeoutInMinutes: 10
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
     - type: SHELL_SCRIPT
       name: Shell Script
       properties:
@@ -78,6 +69,15 @@ phases:
         templateExpressions: null
         templateVariables: ''
         timeoutMillis: 180000
+    - type: K8S_DELETE
+      name: Delete
+      properties:
+        deleteNamespacesForRelease: false
+        resources: deployment/${service.name}-deployment, service/${service.name}-svc, configmap/${service.name}-${workflow.releaseNo}, secrets/${service.name}-${workflow.releaseNo}
+        stateTimeoutInMinutes: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   provisionNodes: false
   serviceName: nginx
