@@ -42,7 +42,10 @@ phases:
         publishAsVar: true
         sweepingOutputName: HARNESS_APPROVAL_STATUS
         sweepingOutputScope: WORKFLOW
-        timeoutMillis: 600000
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 180000
         userGroupNames:
         - Account Administrator
         variables:
