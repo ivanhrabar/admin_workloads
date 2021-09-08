@@ -42,6 +42,12 @@ phases:
         timeoutMillis: 600000
         userGroupNames:
         - Account Administrator
+    - type: K8S_DELETE
+      name: Delete
+      properties:
+        deleteNamespacesForRelease: false
+        resources: Deployment/nginx-deployment
+        stateTimeoutInMinutes: 10
     stepsInParallel: false
   provisionNodes: false
   serviceName: nginx
