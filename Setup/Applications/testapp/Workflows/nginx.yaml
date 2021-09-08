@@ -35,15 +35,6 @@ phases:
   - type: K8S_PHASE_STEP
     name: Wrap Up
     steps:
-    - type: K8S_DELETE
-      name: Delete
-      properties:
-        deleteNamespacesForRelease: false
-        resources: deployment/${service.name}-deployment, service/${service.name}-svc, configmap/${service.name}-${workflow.releaseNo}, secrets/${service.name}-${workflow.releaseNo}
-        stateTimeoutInMinutes: 10
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
     - type: APPROVAL
       name: Approval timeout
       properties:
@@ -57,6 +48,15 @@ phases:
         variables:
         - name: HARNESS_APPROVAL_STATUS
           value: APPROVED
+    - type: K8S_DELETE
+      name: Delete
+      properties:
+        deleteNamespacesForRelease: false
+        resources: deployment/${service.name}-deployment, service/${service.name}-svc, configmap/${service.name}-${workflow.releaseNo}, secrets/${service.name}-${workflow.releaseNo}
+        stateTimeoutInMinutes: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   provisionNodes: false
   serviceName: nginx
