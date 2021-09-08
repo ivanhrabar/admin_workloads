@@ -45,6 +45,9 @@ phases:
         templateVariables: null
         templateVersion: null
     stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: timeout
+    stepsInParallel: false
   provisionNodes: false
   serviceName: nginx
   statefulSet: false
