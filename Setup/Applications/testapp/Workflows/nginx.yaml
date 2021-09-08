@@ -49,8 +49,11 @@ phases:
       name: Delete
       properties:
         deleteNamespacesForRelease: false
-        resources: Deployment/nginx-deployment
+        resources: Deployment/${service.name}-deployment
         stateTimeoutInMinutes: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   provisionNodes: false
   serviceName: nginx
